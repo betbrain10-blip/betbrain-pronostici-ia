@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+/* HEADER */
+
+.header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.logo {
+  background: linear-gradient(90deg, orange, darkorange);
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: orange;
+}
+
+/* GRID */
+
+.grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding-bottom: 80px;
+}
+
+/* CARD */
+
+.card {
+  background: #0f0f0f;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid #222;
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.25);
+  cursor: pointer;
+  transition: 0.25s;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* TAG */
+
+.tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.hot {
+  background: red;
+}
+
+.live {
+  background: green;
+}
+
+/* TEAMS */
+
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.teams div {
+  text-align: center;
+}
+
+.teams img {
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+/* MARKET */
+
+.market {
+  color: orange;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+/* BAR */
+
+.bar {
+  background: #222;
+  height: 8px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bar div {
+  background: linear-gradient(90deg, orange, orangered);
+  height: 100%;
+}
+
+/* BUTTON */
+
+button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, orange, orangered);
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* MATCH PAGE */
+
+.match {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.match .teams img {
+  height: 80px;
+}
+
+.box {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 18px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.back {
+  margin-top: 40px;
+}

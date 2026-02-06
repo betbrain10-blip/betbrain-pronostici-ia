@@ -1,0 +1,220 @@
+/* ================================
+   MATCH PAGE (pagina interna)
+================================ */
+
+.match-page {
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Torna */
+
+.back-link {
+  align-self: flex-start;
+  color: orange;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* CARD CENTRALE */
+
+.match-card-full {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(12,12,12,0.9);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(255,165,0,.55);
+  box-shadow:
+    0 0 30px rgba(255,140,0,.35),
+    inset 0 0 25px rgba(255,140,0,.12);
+}
+
+/* TITOLO */
+
+.match-title {
+  font-size: 2.1rem;
+  margin-bottom: 18px;
+  color: orange;
+  text-align: center;
+}
+
+/* BOX DETTAGLI */
+
+.details-box {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-line {
+  font-size: 1rem;
+  opacity: .95;
+}
+
+/* PICK */
+
+.highlight {
+  font-size: 1.25rem;
+  color: orange;
+  font-weight: bold;
+}
+
+/* STAKE */
+
+.stake-pill {
+  margin-top: 18px;
+  align-self: flex-start;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: bold;
+  letter-spacing: .4px;
+}
+
+.stake-pill.Basso {
+  background: #2ecc71;
+  color: black;
+}
+
+.stake-pill.Medio {
+  background: orange;
+  color: black;
+}
+
+.stake-pill.Alto {
+  background: #ff3b3b;
+  color: black;
+}
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0f0f0f, #000);
+  font-family: system-ui, sans-serif;
+  color: white;
+}
+
+/* =============================
+   TITOLI
+============================= */
+
+.title {
+  font-size: 2.4rem;
+  color: orange;
+}
+
+.subtitle {
+  opacity: 0.7;
+  margin-bottom: 28px;
+}
+
+/* =============================
+   GRID
+============================= */
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* =============================
+   CARD
+============================= */
+
+.match-card {
+  position: relative;
+  background: linear-gradient(180deg, #0c0c0c, #060606);
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid rgba(255,165,0,.45);
+  box-shadow: 0 0 28px rgba(255,140,0,.2);
+  transition: .2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.match-card:hover {
+  transform: translateY(-6px);
+}
+
+/* =============================
+   CONFIDENCE
+============================= */
+
+.confidence-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: linear-gradient(90deg,#ffb200,#ff6a00);
+  color: black;
+  font-weight: bold;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: .8rem;
+}
+
+/* =============================
+   ESITO
+============================= */
+
+.market-pill {
+  display: inline-block;
+  background: rgba(255,165,0,.2);
+  color: orange;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: .75rem;
+  margin-bottom: 8px;
+}
+
+/* =============================
+   TITOLI MATCH
+============================= */
+
+.match-title-small {
+  font-size: 1.05rem;
+  margin: 10px 0;
+  line-height: 1.2;
+  min-height: 46px;
+}
+
+/* =============================
+   META
+============================= */
+
+.meta-row {
+  opacity: .75;
+  font-size: .8rem;
+}
+
+/* =============================
+   BUTTON
+============================= */
+
+.analyze-btn {
+  display: block;
+  text-align: center;
+  background: linear-gradient(90deg,#ff9c00,#ff6a00);
+  color: black;
+  padding: 11px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 14px;
+  font-weight: bold;
+}
+
+/* =============================
+   RESPONSIVE SALA
+============================= */
+
+@media (min-width: 1600px) {
+  .matches-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
