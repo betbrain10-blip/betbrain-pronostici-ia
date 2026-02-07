@@ -1,3 +1,10 @@
+export default function App() {
+  return (
+    <div style={{ color: "red", fontSize: 40 }}>
+      TEST APP ONLINE
+    </div>
+  );
+}
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
