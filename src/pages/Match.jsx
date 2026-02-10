@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import matches from "../data/matches";
+import "../App.css";
 
 export default function Match() {
   const { id } = useParams();
@@ -8,53 +9,52 @@ export default function Match() {
 
   if (!match) return <p>Evento non trovato</p>;
 
-  const explanation =
-    match.reason ||
-    (match.picks && match.picks.length > 0 && match.picks[0].explanation);
-
   return (
     <div className="match-page">
-
-      <Link to="/" className="back-link">← Torna</Link>
+      <Link to="/" className="back-link">
+        ← Torna
+      </Link>
 
       <div className="match-card-full">
-
-        <h1 className="match-title">
+        <h1>
           {match.home} vs {match.away}
         </h1>
 
         <div className="details-box">
+          <div>🏆 {match.competition}</div>
 
-          <div className="detail-line">
-            <strong>Confidenza:</strong> {match.confidence || match.aiConfidence}%
+          <div>
+            📅{" "}
+            {new Date(match.utcDate).toLocaleDateString("it-IT")} — 🕒{" "}
+            {new Date(match.utcDate).toLocaleTimeString("it-IT", {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
           </div>
 
-          <div className="detail-line">
-            🏆 {match.competition || match.league}
+          <div>
+            🔥 Confidenza: <strong>{match.confidence}%</strong>
           </div>
 
-          <div className="detail-line">
-            📅 {new Date(match.utcDate || match.date).toLocaleString("it-IT")}
-          </div>
-
-          {/* PICK */}
-          {match.market && (
-            <div className="detail-line highlight">
-              🎯 Pick consigliata: {match.market}
-            </div>
+          {match.objective && (
+            <>
+              <div>📊 Corner Index: {match.objective.cornerIndex}</div>
+              <div>🟨 Cards Index: {match.objective.cardsIndex}</div>
+            </>
           )}
+        </div>
 
-          {/* DESCRIZIONE */}
-          {explanation && (
-            <div className="detail-line">
-              🧠 {explanation}
+        <h2>📊 Pronostici IA</h2>
+
+        <div className="picks-box">
+          {match.picks.map((p, i) => (
+            <div className="pick-row" key={i}>
+              <strong>
+                {p.type} — {p.value}
+              </strong>
+              <p>{p.explanation}</p>
             </div>
-          )}
-
-          <span className={`stake-pill ${match.stake}`}>
-            Stake consigliato: {match.stake}
-          </span>
-
+          ))}
         </div>
       </div>
     </div>
